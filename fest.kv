@@ -1,0 +1,35 @@
+<FestScreen>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 20
+
+    canvas.before:
+        Color:
+            rgba: 0.12, 0.12, 0.15, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        text: root.output
+        markup: True
+        font_size: '18sp'
+        size_hint_y: 0.75
+        color: 1, 1, 1, 1
+        text_size: self.width - 40, None
+        halign: 'center'
+        valign: 'middle'
+
+    BoxLayout:
+        size_hint_y: 0.25
+        spacing: 20
+
+        Button:
+            text: "Наступний заклад"
+            font_size: '20sp'
+            on_press: root.next_step()
+
+        Button:
+            text: "Почати спочатку"
+            font_size: '18sp'
+            on_press: root.restart()
